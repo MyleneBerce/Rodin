@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.psFile>
-    <org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="10" org.eventb.core.psManual="false"/>
-    <org.eventb.core.psStatus name="Envoyer/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="12" org.eventb.core.psManual="false"/>
-    <org.eventb.core.psStatus name="Recevoir/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="12" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="17" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Envoyer/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="16" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Envoyer/inv5/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="16" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Envoyer/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="16" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Envoyer/inv8/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="16" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Recevoir/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="20" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Recevoir/inv6/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="20" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Recevoir/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="20" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Recevoir/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="20" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Perdre/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="21" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Perdre/inv5/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="21" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Perdre/inv6/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="21" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Perdre/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="21" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Perdre/inv8/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="21" org.eventb.core.psManual="false"/>
 </org.eventb.core.psFile>
