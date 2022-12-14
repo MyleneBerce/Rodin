@@ -6,13 +6,7 @@
     </org.eventb.core.scInternalContext>
     <org.eventb.core.scInternalContext name="Packet">
         <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/Project/Nodes.bcc|org.eventb.core.scContextFile#Nodes" org.eventb.core.source="/Project/Packet.buc|org.eventb.core.contextFile#Packet|org.eventb.core.extendsContext#."/>
-        <org.eventb.core.scAxiom name="Nodet" org.eventb.core.label="axm1" org.eventb.core.predicate="src∈NODES" org.eventb.core.source="/Project/Packet.buc|org.eventb.core.contextFile#Packet|org.eventb.core.axiom#," org.eventb.core.theorem="false"/>
-        <org.eventb.core.scAxiom name="Nodeu" org.eventb.core.label="axm2" org.eventb.core.predicate="dst∈NODES" org.eventb.core.source="/Project/Packet.buc|org.eventb.core.contextFile#Packet|org.eventb.core.axiom#-" org.eventb.core.theorem="false"/>
-        <org.eventb.core.scAxiom name="Nodev" org.eventb.core.label="axm3" org.eventb.core.predicate="route∈NODES" org.eventb.core.source="/Project/Packet.buc|org.eventb.core.contextFile#Packet|org.eventb.core.axiom#\/" org.eventb.core.theorem="false"/>
         <org.eventb.core.scCarrierSet name="PACKETS" org.eventb.core.source="/Project/Packet.buc|org.eventb.core.contextFile#Packet|org.eventb.core.carrierSet#0" org.eventb.core.type="ℙ(PACKETS)"/>
-        <org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="route" org.eventb.core.source="/Project/Packet.buc|org.eventb.core.contextFile#Packet|org.eventb.core.constant#*" org.eventb.core.type="NODES"/>
-        <org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="dst" org.eventb.core.source="/Project/Packet.buc|org.eventb.core.contextFile#Packet|org.eventb.core.constant#)" org.eventb.core.type="NODES"/>
-        <org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" name="src" org.eventb.core.source="/Project/Packet.buc|org.eventb.core.contextFile#Packet|org.eventb.core.constant#(" org.eventb.core.type="NODES"/>
     </org.eventb.core.scInternalContext>
     <org.eventb.core.scInvariant name="Packeu" org.eventb.core.label="inv1" org.eventb.core.predicate="Pret⊆PACKETS" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#*" org.eventb.core.theorem="false"/>
     <org.eventb.core.scInvariant name="Packev" org.eventb.core.label="inv2" org.eventb.core.predicate="Recu⊆PACKETS" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#," org.eventb.core.theorem="false"/>
