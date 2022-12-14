@@ -17,4 +17,20 @@
     <org.eventb.core.invariant name="/" org.eventb.core.label="inv3" org.eventb.core.predicate="Perdu ∩ Pret = ∅"/>
     <org.eventb.core.invariant name="0" org.eventb.core.label="inv4" org.eventb.core.predicate="Perdu ∩ Recu = ∅"/>
     <org.eventb.core.seesContext name="1" org.eventb.core.target="Packet"/>
+    <org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="topologyChangeRemove">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="source"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="desti"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="source ∈ NODES"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="desti ∈ NODES"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="source ≠ desti"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="Liaisons ≔ Liaisons ∖ {source ↦ desti}" org.eventb.core.comment=",," org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="topologyChangeAdd">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="source"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="desti"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="source ∈ NODES"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="desti ∈ NODES"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="source ≠ desti"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="Liaisons ≔ Liaisons ∪ {source ↦ desti}" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
 </org.eventb.core.machineFile>
