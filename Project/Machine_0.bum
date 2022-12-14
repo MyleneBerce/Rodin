@@ -3,6 +3,8 @@
     <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
         <org.eventb.core.action name="'" org.eventb.core.assignment="Pret ≔ PACKETS" org.eventb.core.label="act1"/>
         <org.eventb.core.action name="(" org.eventb.core.assignment="Recu ≔ ∅" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="Perdu ≔ ∅" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="Liaisons ≔ ∅" org.eventb.core.label="act4"/>
     </org.eventb.core.event>
     <org.eventb.core.seesContext name="(" org.eventb.core.target="Packet"/>
     <org.eventb.core.variable name=")" org.eventb.core.comment="PACKETS" org.eventb.core.identifier="Pret"/>
@@ -19,7 +21,39 @@
     <org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Recevoir">
         <org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
         <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PACKETS"/>
-        <org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="p ∉ Pret ∧ p ∉ Recu"/>
+        <org.eventb.core.guard name=")" org.eventb.core.comment="p en transit (et pas sur le transat')" org.eventb.core.label="grd2" org.eventb.core.predicate="p ∉ Pret ∧ p ∉ Recu ∧ p ∉ Perdu"/>
         <org.eventb.core.action name="*" org.eventb.core.assignment="Recu ≔ Recu ∪ {p}" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="0" org.eventb.core.comment="PACKETS" org.eventb.core.identifier="Perdu"/>
+    <org.eventb.core.variable name="1" org.eventb.core.comment="NODES x NODES" org.eventb.core.identifier="Liaisons"/>
+    <org.eventb.core.invariant name="2" org.eventb.core.label="inv4" org.eventb.core.predicate="Perdu ⊆ PACKETS"/>
+    <org.eventb.core.invariant name="3" org.eventb.core.label="inv5" org.eventb.core.predicate="Perdu ∩ Pret = ∅"/>
+    <org.eventb.core.invariant name="4" org.eventb.core.label="inv6" org.eventb.core.predicate="Perdu ∩ Recu = ∅"/>
+    <org.eventb.core.invariant name="5" org.eventb.core.label="inv7" org.eventb.core.predicate="PACKETS = Pret ∪ Perdu ∪ Recu"/>
+    <org.eventb.core.invariant name="6" org.eventb.core.label="inv8" org.eventb.core.predicate="(Pret ∪ Perdu = ∅) ⇒ (PACKETS = Recu)"/>
+    <org.eventb.core.invariant name="7" org.eventb.core.label="inv9" org.eventb.core.predicate="Liaisons ∈ NODES ↔ NODES"/>
+    <org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="TopologyChangeRemove">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="n1"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="n2"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="n1 ∈ NODES"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="n2 ∈ NODES"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="n1 ≠ n2"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="n1 ↦ n2 ∈ Liaisons"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="Liaisons ≔ Liaisons ∖ {n1 ↦ n2}" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="TopologyChangeAdd">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="n1"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="n2"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="n1 ∈ NODES"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="n2 ∈ NODES"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="n1 ≠ n2"/>
+        <org.eventb.core.guard name="," org.eventb.core.label="grd4" org.eventb.core.predicate="n1 ↦ n2 ∉ Liaisons"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="Liaisons ≔ Liaisons ∪ {n1 ↦ n2}" org.eventb.core.label="act1"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Perdre">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
+        <org.eventb.core.guard name="(" org.eventb.core.comment="p en transit (et pas sur le transat')" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∉ Pret ∧ p ∉ Recu ∧ p ∉ Perdu"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="Pret ≔ Pret ∖ {p}" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="Perdu ≔ Perdu ∪ {p}" org.eventb.core.label="act2"/>
     </org.eventb.core.event>
 </org.eventb.core.machineFile>

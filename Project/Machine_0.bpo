@@ -1,61 +1,221 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="14">
+<org.eventb.core.poFile org.eventb.core.poStamp="21">
     <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="14">
         <org.eventb.core.poIdentifier name="NODES" org.eventb.core.type="ℙ(NODES)"/>
         <org.eventb.core.poIdentifier name="PACKETS" org.eventb.core.type="ℙ(PACKETS)"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="14">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="16">
+        <org.eventb.core.poIdentifier name="Liaisons" org.eventb.core.type="ℙ(NODES×NODES)"/>
         <org.eventb.core.poIdentifier name="Recu" org.eventb.core.type="ℙ(PACKETS)"/>
         <org.eventb.core.poIdentifier name="Pret" org.eventb.core.type="ℙ(PACKETS)"/>
+        <org.eventb.core.poIdentifier name="Perdu" org.eventb.core.type="ℙ(PACKETS)"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="14">
-        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPPackex"/>
+    <org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="17">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisont"/>
         <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="PACKETS∩(∅ ⦂ ℙ(PACKETS))=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#-"/>
         <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#'"/>
         <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#-"/>
         <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
         <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
     </org.eventb.core.poSequent>
-    <org.eventb.core.poPredicateSet name="EVTIDENTPackex" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="14">
+    <org.eventb.core.poSequent name="INITIALISATION/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="17">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisont"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(PACKETS))∩PACKETS=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#INITIALISATION\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="17">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisont"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(PACKETS))∩(∅ ⦂ ℙ(PACKETS))=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#INITIALISATION\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="17">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisont"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="PACKETS=PACKETS∪(∅ ⦂ ℙ(PACKETS))∪(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#INITIALISATION\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="INITIALISATION/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="17">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisont"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="PACKETS∪(∅ ⦂ ℙ(PACKETS))=(∅ ⦂ ℙ(PACKETS))⇒PACKETS=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#'"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#6"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#INITIALISATION\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTLiaisont" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
         <org.eventb.core.poIdentifier name="Recu'" org.eventb.core.type="ℙ(PACKETS)"/>
+        <org.eventb.core.poIdentifier name="Liaisons'" org.eventb.core.type="ℙ(NODES×NODES)"/>
+        <org.eventb.core.poIdentifier name="Perdu'" org.eventb.core.type="ℙ(PACKETS)"/>
         <org.eventb.core.poIdentifier name="Pret'" org.eventb.core.type="ℙ(PACKETS)"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poPredicateSet name="EVTALLHYPPackex" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTIDENTPackex" org.eventb.core.poStamp="14"/>
-    <org.eventb.core.poSequent name="Envoyer/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="14">
-        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPPackey"/>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPLiaisont" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTIDENTLiaisont" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poSequent name="Envoyer/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisonu"/>
         <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Pret ∖ {p})∩Recu=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#-"/>
         <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#."/>
         <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#-"/>
         <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Envoyer\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
         <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
     </org.eventb.core.poSequent>
-    <org.eventb.core.poPredicateSet name="EVTIDENTPackey" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="14">
+    <org.eventb.core.poSequent name="Envoyer/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisonu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Perdu∩(Pret ∖ {p})=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#."/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Envoyer\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Envoyer/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisonu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="PACKETS=(Pret ∖ {p})∪Perdu∪Recu" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#."/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Envoyer\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Envoyer/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="16">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisonu"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Pret ∖ {p})∪Perdu=(∅ ⦂ ℙ(PACKETS))⇒PACKETS=Recu" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#."/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#6"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Envoyer\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTLiaisonu" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
         <org.eventb.core.poIdentifier name="Pret'" org.eventb.core.type="ℙ(PACKETS)"/>
         <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PACKETS"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poPredicateSet name="EVTALLHYPPackey" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTIDENTPackey" org.eventb.core.poStamp="14">
+    <org.eventb.core.poPredicateSet name="EVTALLHYPLiaisonu" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTIDENTLiaisonu" org.eventb.core.poStamp="0">
         <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈PACKETS" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#.|org.eventb.core.guard#("/>
         <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p∈Pret" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#.|org.eventb.core.guard#)"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poSequent name="Recevoir/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="14">
-        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPPackez"/>
+    <org.eventb.core.poSequent name="Recevoir/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="20">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisonv"/>
         <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Pret∩(Recu∪{p})=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#-"/>
         <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#\/"/>
         <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#-"/>
         <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Recevoir\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
         <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
     </org.eventb.core.poSequent>
-    <org.eventb.core.poPredicateSet name="EVTIDENTPackez" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="14">
+    <org.eventb.core.poSequent name="Recevoir/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="20">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisonv"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Perdu∩(Recu∪{p})=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Recevoir\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Recevoir/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="20">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisonv"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="PACKETS=Pret∪Perdu∪(Recu∪{p})" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Recevoir\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Recevoir/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="20">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisonv"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Pret∪Perdu=(∅ ⦂ ℙ(PACKETS))⇒PACKETS=Recu∪{p}" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#\/"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#6"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Recevoir\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTLiaisonv" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
         <org.eventb.core.poIdentifier name="Recu'" org.eventb.core.type="ℙ(PACKETS)"/>
         <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PACKETS"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poPredicateSet name="EVTALLHYPPackez" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTIDENTPackez" org.eventb.core.poStamp="14">
+    <org.eventb.core.poPredicateSet name="EVTALLHYPLiaisonv" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTIDENTLiaisonv" org.eventb.core.poStamp="20">
         <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈PACKETS" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#\/|org.eventb.core.guard#("/>
-        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p∉Pret∧p∉Recu" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#\/|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="p∉Pret∧p∉Recu∧p∉Perdu" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#\/|org.eventb.core.guard#)"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="14">
+    <org.eventb.core.poPredicateSet name="EVTIDENTLiaisonw" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="n2" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="Liaisons'" org.eventb.core.type="ℙ(NODES×NODES)"/>
+        <org.eventb.core.poIdentifier name="n1" org.eventb.core.type="NODES"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPLiaisonw" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTIDENTLiaisonw" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="n1∈NODES" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#8|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="n2∈NODES" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#8|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="n1≠n2" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#8|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="n1 ↦ n2∈Liaisons" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#8|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTLiaisonx" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="n2" org.eventb.core.type="NODES"/>
+        <org.eventb.core.poIdentifier name="Liaisons'" org.eventb.core.type="ℙ(NODES×NODES)"/>
+        <org.eventb.core.poIdentifier name="n1" org.eventb.core.type="NODES"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPLiaisonx" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTIDENTLiaisonx" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="n1∈NODES" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#9|org.eventb.core.guard#)"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="n2∈NODES" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#9|org.eventb.core.guard#*"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="n1≠n2" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#9|org.eventb.core.guard#+"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="n1 ↦ n2∉Liaisons" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#9|org.eventb.core.guard#,"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poSequent name="Perdre/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisony"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Pret ∖ {p})∩Recu=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#:"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Perdre\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Perdre/inv5/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisony"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Perdu∪{p})∩(Pret ∖ {p})=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#:"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Perdre\/inv5\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD4"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Perdre/inv6/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisony"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Perdu∪{p})∩Recu=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#:"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Perdre\/inv6\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD5"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Perdre/inv7/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisony"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="PACKETS=(Pret ∖ {p})∪(Perdu∪{p})∪Recu" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#:"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Perdre\/inv7\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD6"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poSequent name="Perdre/inv8/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTALLHYPLiaisony"/>
+        <org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(Pret ∖ {p})∪(Perdu∪{p})=(∅ ⦂ ℙ(PACKETS))⇒PACKETS=Recu" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#6"/>
+        <org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#:"/>
+        <org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#6"/>
+        <org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poSequent#Perdre\/inv8\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+        <org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD7"/>
+    </org.eventb.core.poSequent>
+    <org.eventb.core.poPredicateSet name="EVTIDENTLiaisony" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="Perdu'" org.eventb.core.type="ℙ(PACKETS)"/>
+        <org.eventb.core.poIdentifier name="Pret'" org.eventb.core.type="ℙ(PACKETS)"/>
+        <org.eventb.core.poIdentifier name="p" org.eventb.core.type="PACKETS"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPLiaisony" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#EVTIDENTLiaisony" org.eventb.core.poStamp="21">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∉Pret∧p∉Recu∧p∉Perdu" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.event#:|org.eventb.core.guard#("/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Project/Machine_0.bpo|org.eventb.core.poFile#Machine_0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="16">
         <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Pret⊆PACKETS" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#*"/>
         <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Recu⊆PACKETS" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#,"/>
         <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="Pret∩Recu=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#-"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="Perdu⊆PACKETS" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#2"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="Perdu∩Pret=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#3"/>
+        <org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="Perdu∩Recu=(∅ ⦂ ℙ(PACKETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#4"/>
+        <org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="PACKETS=Pret∪Perdu∪Recu" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#5"/>
+        <org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="Pret∪Perdu=(∅ ⦂ ℙ(PACKETS))⇒PACKETS=Recu" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#6"/>
+        <org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="Liaisons∈NODES ↔ NODES" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#7"/>
     </org.eventb.core.poPredicateSet>
 </org.eventb.core.poFile>
