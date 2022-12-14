@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.prFile version="1">
-    <org.eventb.core.prProof name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PAQUETS">
+    <org.eventb.core.prProof name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PACKETS">
         <org.eventb.core.lang name="L"/>
         <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
             <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
@@ -8,11 +8,11 @@
             </org.eventb.core.prAnte>
         </org.eventb.core.prRule>
         <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
-        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="PAQUETS∩(∅ ⦂ ℙ(PAQUETS))=(∅ ⦂ ℙ(PAQUETS))"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="PACKETS∩(∅ ⦂ ℙ(PACKETS))=(∅ ⦂ ℙ(PACKETS))"/>
         <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
         <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
     </org.eventb.core.prProof>
-    <org.eventb.core.prProof name="Envoyer/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PAQUETS">
+    <org.eventb.core.prProof name="Envoyer/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PACKETS">
         <org.eventb.core.lang name="L"/>
         <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
             <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
@@ -21,20 +21,35 @@
                         <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p2"/>
                         <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
                         <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p4"/>
+                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p5"/>
+                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p6"/>
+                        <org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p7"/>
                     </org.eventb.core.prAnte>
                 </org.eventb.core.prRule>
             </org.eventb.core.prAnte>
         </org.eventb.core.prRule>
-        <org.eventb.core.prIdent name="Pret" org.eventb.core.type="ℙ(PAQUETS)"/>
-        <org.eventb.core.prIdent name="Recu" org.eventb.core.type="ℙ(PAQUETS)"/>
-        <org.eventb.core.prIdent name="p" org.eventb.core.type="PAQUETS"/>
-        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="p∈PAQUETS"/>
-        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(Pret ∖ {p})∩Recu=(∅ ⦂ ℙ(PAQUETS))"/>
-        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="Pret⊆PAQUETS"/>
+        <org.eventb.core.prIdent name="Pret" org.eventb.core.type="ℙ(PACKETS)"/>
+        <org.eventb.core.prIdent name="Recu" org.eventb.core.type="ℙ(PACKETS)"/>
+        <org.eventb.core.prIdent name="p" org.eventb.core.type="PACKETS"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="Pret⊆PACKETS"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="route∈NODES">
+            <org.eventb.core.prIdent name="NODES" org.eventb.core.type="ℙ(NODES)"/>
+            <org.eventb.core.prIdent name="route" org.eventb.core.type="NODES"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="Recu⊆PACKETS"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(Pret ∖ {p})∩Recu=(∅ ⦂ ℙ(PACKETS))"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="dst∈NODES">
+            <org.eventb.core.prIdent name="NODES" org.eventb.core.type="ℙ(NODES)"/>
+            <org.eventb.core.prIdent name="dst" org.eventb.core.type="NODES"/>
+        </org.eventb.core.prPred>
         <org.eventb.core.prPred name="p1" org.eventb.core.predicate="Pret∩Recu⊆{p}"/>
-        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="Recu⊆PAQUETS"/>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="src∈NODES">
+            <org.eventb.core.prIdent name="NODES" org.eventb.core.type="ℙ(NODES)"/>
+            <org.eventb.core.prIdent name="src" org.eventb.core.type="NODES"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="p∈PACKETS"/>
         <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
     </org.eventb.core.prProof>
     <org.eventb.core.prProof name="Recevoir/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
         <org.eventb.core.lang name="L"/>
@@ -46,39 +61,54 @@
                         <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
                         <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
                         <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p5"/>
+                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p6"/>
+                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p7"/>
+                        <org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p8"/>
                     </org.eventb.core.prAnte>
                 </org.eventb.core.prRule>
             </org.eventb.core.prAnte>
         </org.eventb.core.prRule>
-        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="p∈PAQUETS">
-            <org.eventb.core.prIdent name="PAQUETS" org.eventb.core.type="ℙ(PAQUETS)"/>
-            <org.eventb.core.prIdent name="p" org.eventb.core.type="PAQUETS"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="Pret⊆PACKETS">
+            <org.eventb.core.prIdent name="PACKETS" org.eventb.core.type="ℙ(PACKETS)"/>
+            <org.eventb.core.prIdent name="Pret" org.eventb.core.type="ℙ(PACKETS)"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="Pret⊆PAQUETS">
-            <org.eventb.core.prIdent name="PAQUETS" org.eventb.core.type="ℙ(PAQUETS)"/>
-            <org.eventb.core.prIdent name="Pret" org.eventb.core.type="ℙ(PAQUETS)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="route∈NODES">
+            <org.eventb.core.prIdent name="NODES" org.eventb.core.type="ℙ(NODES)"/>
+            <org.eventb.core.prIdent name="route" org.eventb.core.type="NODES"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="Recu⊆PACKETS">
+            <org.eventb.core.prIdent name="PACKETS" org.eventb.core.type="ℙ(PACKETS)"/>
+            <org.eventb.core.prIdent name="Recu" org.eventb.core.type="ℙ(PACKETS)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="dst∈NODES">
+            <org.eventb.core.prIdent name="NODES" org.eventb.core.type="ℙ(NODES)"/>
+            <org.eventb.core.prIdent name="dst" org.eventb.core.type="NODES"/>
         </org.eventb.core.prPred>
         <org.eventb.core.prPred name="p0" org.eventb.core.predicate="p∉Pret∧p∉Recu">
-            <org.eventb.core.prIdent name="PAQUETS" org.eventb.core.type="ℙ(PAQUETS)"/>
-            <org.eventb.core.prIdent name="Pret" org.eventb.core.type="ℙ(PAQUETS)"/>
-            <org.eventb.core.prIdent name="Recu" org.eventb.core.type="ℙ(PAQUETS)"/>
-            <org.eventb.core.prIdent name="p" org.eventb.core.type="PAQUETS"/>
+            <org.eventb.core.prIdent name="PACKETS" org.eventb.core.type="ℙ(PACKETS)"/>
+            <org.eventb.core.prIdent name="Pret" org.eventb.core.type="ℙ(PACKETS)"/>
+            <org.eventb.core.prIdent name="Recu" org.eventb.core.type="ℙ(PACKETS)"/>
+            <org.eventb.core.prIdent name="p" org.eventb.core.type="PACKETS"/>
         </org.eventb.core.prPred>
         <org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬p∈Recu">
-            <org.eventb.core.prIdent name="PAQUETS" org.eventb.core.type="ℙ(PAQUETS)"/>
-            <org.eventb.core.prIdent name="Recu" org.eventb.core.type="ℙ(PAQUETS)"/>
-            <org.eventb.core.prIdent name="p" org.eventb.core.type="PAQUETS"/>
+            <org.eventb.core.prIdent name="PACKETS" org.eventb.core.type="ℙ(PACKETS)"/>
+            <org.eventb.core.prIdent name="Recu" org.eventb.core.type="ℙ(PACKETS)"/>
+            <org.eventb.core.prIdent name="p" org.eventb.core.type="PACKETS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="Recu⊆PAQUETS">
-            <org.eventb.core.prIdent name="PAQUETS" org.eventb.core.type="ℙ(PAQUETS)"/>
-            <org.eventb.core.prIdent name="Recu" org.eventb.core.type="ℙ(PAQUETS)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="src∈NODES">
+            <org.eventb.core.prIdent name="NODES" org.eventb.core.type="ℙ(NODES)"/>
+            <org.eventb.core.prIdent name="src" org.eventb.core.type="NODES"/>
         </org.eventb.core.prPred>
         <org.eventb.core.prPred name="p1" org.eventb.core.predicate="¬p∈Pret">
-            <org.eventb.core.prIdent name="PAQUETS" org.eventb.core.type="ℙ(PAQUETS)"/>
-            <org.eventb.core.prIdent name="Pret" org.eventb.core.type="ℙ(PAQUETS)"/>
-            <org.eventb.core.prIdent name="p" org.eventb.core.type="PAQUETS"/>
+            <org.eventb.core.prIdent name="PACKETS" org.eventb.core.type="ℙ(PACKETS)"/>
+            <org.eventb.core.prIdent name="Pret" org.eventb.core.type="ℙ(PACKETS)"/>
+            <org.eventb.core.prIdent name="p" org.eventb.core.type="PACKETS"/>
         </org.eventb.core.prPred>
-        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="p∈PACKETS">
+            <org.eventb.core.prIdent name="PACKETS" org.eventb.core.type="ℙ(PACKETS)"/>
+            <org.eventb.core.prIdent name="p" org.eventb.core.type="PACKETS"/>
+        </org.eventb.core.prPred>
         <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
     </org.eventb.core.prProof>
 </org.eventb.core.prFile>

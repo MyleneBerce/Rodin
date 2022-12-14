@@ -7,4 +7,5 @@
     <org.eventb.core.axiom name="-" org.eventb.core.label="axm2" org.eventb.core.predicate="dst ∈ NODES"/>
     <org.eventb.core.extendsContext name="." org.eventb.core.target="Nodes"/>
     <org.eventb.core.axiom name="/" org.eventb.core.label="axm3" org.eventb.core.predicate="route ∈ NODES"/>
+    <org.eventb.core.carrierSet name="0" org.eventb.core.identifier="PACKETS"/>
 </org.eventb.core.contextFile>
