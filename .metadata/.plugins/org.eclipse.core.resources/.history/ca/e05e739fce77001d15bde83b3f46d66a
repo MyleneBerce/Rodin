@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="2">
+    <org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="1">
+        <org.eventb.core.poIdentifier name="PAQUETS" org.eventb.core.type="ℙ(PAQUETS)"/>
+        <org.eventb.core.poIdentifier name="NOEUDS" org.eventb.core.type="ℙ(NOEUDS)"/>
+        <org.eventb.core.poPredicate name="PAQUETT" org.eventb.core.predicate="finite(NOEUDS)" org.eventb.core.source="/Project/Context_0.buc|org.eventb.core.contextFile#Context_0|org.eventb.core.axiom#("/>
+        <org.eventb.core.poPredicate name="PAQUETU" org.eventb.core.predicate="finite(PAQUETS)" org.eventb.core.source="/Project/Context_0.buc|org.eventb.core.contextFile#Context_0|org.eventb.core.axiom#*"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Project/Machine_1.bpo|org.eventb.core.poFile#Machine_1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="2">
+        <org.eventb.core.poIdentifier name="Liaison" org.eventb.core.type="ℙ(NOEUDS×NOEUDS)"/>
+        <org.eventb.core.poIdentifier name="Recu" org.eventb.core.type="ℙ(PAQUETS)"/>
+        <org.eventb.core.poIdentifier name="Pret" org.eventb.core.type="ℙ(PAQUETS)"/>
+        <org.eventb.core.poPredicate name="Liaisoo" org.eventb.core.predicate="Pret⊆PAQUETS" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#*"/>
+        <org.eventb.core.poPredicate name="Liaisop" org.eventb.core.predicate="Recu⊆PAQUETS" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#,"/>
+        <org.eventb.core.poPredicate name="Liaisoq" org.eventb.core.predicate="Pret∩Recu=(∅ ⦂ ℙ(PAQUETS))" org.eventb.core.source="/Project/Machine_0.bum|org.eventb.core.machineFile#Machine_0|org.eventb.core.invariant#-"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTIDENTContext_5" org.eventb.core.parentSet="/Project/Machine_1.bpo|org.eventb.core.poFile#Machine_1|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="Recu'" org.eventb.core.type="ℙ(PAQUETS)"/>
+        <org.eventb.core.poIdentifier name="Pret'" org.eventb.core.type="ℙ(PAQUETS)"/>
+        <org.eventb.core.poIdentifier name="Liaison'" org.eventb.core.type="ℙ(NOEUDS×NOEUDS)"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="EVTALLHYPContext_5" org.eventb.core.parentSet="/Project/Machine_1.bpo|org.eventb.core.poFile#Machine_1|org.eventb.core.poPredicateSet#EVTIDENTContext_5" org.eventb.core.poStamp="0"/>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Project/Machine_1.bpo|org.eventb.core.poFile#Machine_1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="2">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Liaison∈NOEUDS ↔ NOEUDS" org.eventb.core.source="/Project/Machine_1.bum|org.eventb.core.machineFile#Machine_1|org.eventb.core.invariant#+"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

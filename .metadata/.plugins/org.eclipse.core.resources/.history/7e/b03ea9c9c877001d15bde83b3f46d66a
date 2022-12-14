@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION"/>
+    <org.eventb.core.seesContext name="(" org.eventb.core.target="Context_0"/>
+    <org.eventb.core.variable name=")" org.eventb.core.comment="PAQUETS" org.eventb.core.identifier="PPret"/>
+    <org.eventb.core.invariant name="*" org.eventb.core.label="inv1" org.eventb.core.predicate="PPret ⊆ PAQUETS"/>
+    <org.eventb.core.variable name="+" org.eventb.core.comment="PAQUETS" org.eventb.core.identifier="PRecu"/>
+    <org.eventb.core.invariant name="," org.eventb.core.label="inv2" org.eventb.core.predicate="PRecu ⊆ PAQUETS"/>
+    <org.eventb.core.invariant name="-" org.eventb.core.label="inv3" org.eventb.core.predicate="PPret ∩ PRecu = ∅"/>
+</org.eventb.core.machineFile>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<index_root>
+    <pim project="/Project">
+        <rodin_index>
+            <descriptor element="/Project/Context_0.buc|org.eventb.core.contextFile#Context_0" name="Context_0">
+                <occurrence element="/Project/Context_0.buc|org.eventb.core.contextFile#Context_0" kind="org.eventb.core.declaration"/>
+            </descriptor>
+        </rodin_index>
+        <export_table>
+            <export file="/Project/Context_0.buc">
+                <exported element="/Project/Context_0.buc|org.eventb.core.contextFile#Context_0" name="Context_0"/>
+            </export>
+        </export_table>
+        <graph is_sorted="true">
+            <node label="/Project/Context_0.buc" mark="false" order_pos="0"/>
+        </graph>
+        <unprocessed file="/Project/Context_0.bcc"/>
+        <unprocessed file="/Project/Context_0.bpo"/>
+        <unprocessed file="/Project/Context_0.bpr"/>
+        <unprocessed file="/Project/Context_0.bps"/>
+    </pim>
+    <delta_list>
+        <delta element="/Project/Context_0.bcc" kind="FILE_CHANGED"/>
+    </delta_list>
+    <indexer_registry>
+        <registry_entry element_type="org.eventb.core.machineFile">
+            <indexer id="machineIndexer"/>
+        </registry_entry>
+        <registry_entry element_type="org.eventb.core.contextFile">
+            <indexer id="contextIndexer"/>
+        </registry_entry>
+    </indexer_registry>
+</index_root>
