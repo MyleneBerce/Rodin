@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="(" org.eventb.core.comment="Le noeud qui envoie le paquet" org.eventb.core.identifier="src"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=")" org.eventb.core.comment="Le noeud qui doit recevoir le paquet" org.eventb.core.identifier="dst"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="*" org.eventb.core.comment="La série des noeuds à travers lesquels le paquet doit être acheminé pour atteindre sa destination" org.eventb.core.identifier="route"/>
+    <org.eventb.core.axiom name="," org.eventb.core.label="axm1" org.eventb.core.predicate="src ∈ NODES"/>
+    <org.eventb.core.axiom name="-" org.eventb.core.label="axm2" org.eventb.core.predicate="dst ∈ NODES"/>
     <org.eventb.core.extendsContext name="." org.eventb.core.target="Nodes"/>
+    <org.eventb.core.axiom name="2" org.eventb.core.label="axm4" org.eventb.core.predicate="route ∈ NODES ↔ ℕ"/>
+    <org.eventb.core.axiom name="/" org.eventb.core.label="axm3" org.eventb.core.predicate="paquet ∈ PACKETS ↔ route"/>
     <org.eventb.core.carrierSet name="0" org.eventb.core.identifier="PACKETS"/>
+    <org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="1" org.eventb.core.identifier="paquet"/>
 </org.eventb.core.contextFile>
