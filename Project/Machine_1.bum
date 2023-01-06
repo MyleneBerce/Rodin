@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
     <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
-        <org.eventb.core.action name="'" org.eventb.core.assignment="chemin ≔ ∅" org.eventb.core.label="act1"/>
-        <org.eventb.core.action name="(" org.eventb.core.assignment="liaisonsNoeudActuel ≔ ∅" org.eventb.core.label="act2"/>
-        <org.eventb.core.action name=")" org.eventb.core.assignment="numeroActuelSingleton ≔ ∅" org.eventb.core.label="act3"/>
-        <org.eventb.core.action name="*" org.eventb.core.assignment="numeroActuel ≔ 0" org.eventb.core.label="act4"/>
-        <org.eventb.core.action name="+" org.eventb.core.assignment="prochainNumero ≔ 1" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="internal1" org.eventb.core.assignment="Pret ≔ PACKETS" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="internal2" org.eventb.core.assignment="Recu ≔ ∅" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="internal3" org.eventb.core.assignment="Perdu ≔ ∅" org.eventb.core.label="act3"/>
+        <org.eventb.core.action name="internal4" org.eventb.core.assignment="Liaisons ≔ ∅" org.eventb.core.label="act4"/>
+        <org.eventb.core.action name="internal5" org.eventb.core.assignment="Transit ≔ ∅" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="(" org.eventb.core.assignment="liaisonsNoeudActuel ≔ ∅" org.eventb.core.label="act21"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="numeroActuelSingleton ≔ ∅" org.eventb.core.label="act43"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="numeroActuel ≔ 1" org.eventb.core.label="act45"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="prochainNumero ≔ −1" org.eventb.core.label="act65"/>
         <org.eventb.core.action name="," org.eventb.core.assignment="prochainNoeudSingleton ≔ ∅" org.eventb.core.label="act6"/>
-        <org.eventb.core.action name="-" org.eventb.core.assignment="Perdu ≔ ∅" org.eventb.core.label="act7"/>
         <org.eventb.core.action name="." org.eventb.core.assignment="noeudActuel :∈ NODES" org.eventb.core.label="act8"/>
-        <org.eventb.core.action name="/" org.eventb.core.assignment="Liaisons ≔ ∅" org.eventb.core.label="act9"/>
+        <org.eventb.core.action name="internal6" org.eventb.core.assignment="route ≔ ∅" org.eventb.core.label="act66"/>
     </org.eventb.core.event>
     <org.eventb.core.refinesMachine name="(" org.eventb.core.target="Machine_0"/>
     <org.eventb.core.variable name="*" org.eventb.core.identifier="Liaisons"/>
     <org.eventb.core.invariant name="+" org.eventb.core.label="inv1" org.eventb.core.predicate="Liaisons ∈ NODES ↔ NODES"/>
     <org.eventb.core.event name="," org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="getProchainNoeud">
         <org.eventb.core.action name="*" org.eventb.core.assignment="liaisonsNoeudActuel ≔ Liaisons[{noeudActuel}]" org.eventb.core.label="act1"/>
-        <org.eventb.core.action name="8" org.eventb.core.assignment="chemin ≔ paquet[{p}]" org.eventb.core.label="act9"/>
-        <org.eventb.core.action name="/" org.eventb.core.assignment="numeroActuelSingleton ≔ chemin[{noeudActuel}]" org.eventb.core.label="act2"/>
-        <org.eventb.core.action name="4" org.eventb.core.assignment="numeroActuel :∈ numeroActuelSingleton" org.eventb.core.label="act7"/>
+        <org.eventb.core.action name="4" org.eventb.core.assignment="numeroActuel :∈ route[{noeudActuel}]" org.eventb.core.label="act7"/>
         <org.eventb.core.action name="1" org.eventb.core.assignment="prochainNumero ≔ numeroActuel + 1" org.eventb.core.label="act4"/>
-        <org.eventb.core.action name="2" org.eventb.core.assignment="prochainNoeudSingleton ≔ chemin∼[{prochainNumero}]" org.eventb.core.label="act5"/>
         <org.eventb.core.parameter name="6" org.eventb.core.identifier="p"/>
         <org.eventb.core.guard name="7" org.eventb.core.label="grd4" org.eventb.core.predicate="p ∈ PACKETS"/>
+        <org.eventb.core.guard name="8" org.eventb.core.label="grd5" org.eventb.core.predicate="prochainNumero ≠ card(route)"/>
     </org.eventb.core.event>
+    <org.eventb.core.variable name="N" org.eventb.core.identifier="route"/>
     <org.eventb.core.variable name="6" org.eventb.core.identifier="numeroActuelSingleton"/>
     <org.eventb.core.variable name="7" org.eventb.core.identifier="numeroActuel"/>
     <org.eventb.core.variable name="8" org.eventb.core.identifier="prochainNoeudSingleton"/>
     <org.eventb.core.variable name="-" org.eventb.core.identifier="Perdu"/>
+    <org.eventb.core.invariant name="M" org.eventb.core.label="inv13" org.eventb.core.predicate="route ∈ NODES ↔ ℕ"/>
     <org.eventb.core.invariant name="3" org.eventb.core.label="inv5" org.eventb.core.predicate="liaisonsNoeudActuel ⊆ NODES"/>
-    <org.eventb.core.invariant name="." org.eventb.core.label="inv2" org.eventb.core.predicate="Perdu ⊆ PACKETS"/>
-    <org.eventb.core.invariant name="/" org.eventb.core.label="inv3" org.eventb.core.predicate="Perdu ∩ Pret = ∅"/>
-    <org.eventb.core.invariant name="0" org.eventb.core.label="inv4" org.eventb.core.predicate="Perdu ∩ Recu = ∅"/>
     <org.eventb.core.seesContext name="1" org.eventb.core.target="Packet"/>
     <org.eventb.core.variable name="2" org.eventb.core.identifier="liaisonsNoeudActuel"/>
     <org.eventb.core.variable name="4" org.eventb.core.identifier="prochainNumero"/>
@@ -39,16 +39,33 @@
     <org.eventb.core.invariant name="9" org.eventb.core.label="inv7" org.eventb.core.predicate="prochainNumero ∈ ℕ"/>
     <org.eventb.core.invariant name=":" org.eventb.core.label="inv8" org.eventb.core.predicate="numeroActuelSingleton ⊆ ℕ"/>
     <org.eventb.core.invariant name=";" org.eventb.core.label="inv9" org.eventb.core.predicate="numeroActuel ∈ ℕ"/>
-    <org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Envoyer">
+    <org.eventb.core.event name="?" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Envoyer">
         <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Envoyer"/>
-        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PACKETS"/>
-        <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="prochainNoeudSingleton ∩ liaisonsNoeudActuel ≠ ∅" org.eventb.core.theorem="true"/>
-        <org.eventb.core.action name="+" org.eventb.core.assignment="noeudActuel :∈ prochainNoeudSingleton" org.eventb.core.label="act1"/>
-        <org.eventb.core.parameter name="," org.eventb.core.identifier="p"/>
-        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="prochainNoeudSingleton ≠ ∅"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd3" org.eventb.core.predicate="route∼[{prochainNumero}] ∩ liaisonsNoeudActuel ≠ ∅" org.eventb.core.theorem="true"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="noeudActuel :∈ route∼[{prochainNumero}]" org.eventb.core.label="act11"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="route∼[{prochainNumero}] ≠ ∅"/>
     </org.eventb.core.event>
-    <org.eventb.core.variable name="@" org.eventb.core.identifier="chemin"/>
-    <org.eventb.core.invariant name="A" org.eventb.core.label="inv11" org.eventb.core.predicate="chemin ∈ NODES ↔ ℕ"/>
     <org.eventb.core.variable name="B" org.eventb.core.identifier="noeudActuel"/>
     <org.eventb.core.invariant name="C" org.eventb.core.label="inv12" org.eventb.core.predicate="noeudActuel ∈ NODES"/>
+    <org.eventb.core.event name="O" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="addNodeRoad">
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="node"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="node ∈ NODES"/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="route ≔ route ∪ {node ↦ (card(route)+1)} " org.eventb.core.label="act2"/>
+        <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="route[{node}] ⊆ ∅"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="D" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="TopologyChangeAdd">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="TopologyChangeAdd"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="E" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="TopologyChangeRemove">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="TopologyChangeRemove"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="F" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Perdre">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Perdre"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="G" org.eventb.core.identifier="Transit"/>
+    <org.eventb.core.variable name="H" org.eventb.core.identifier="Pret"/>
+    <org.eventb.core.variable name="I" org.eventb.core.identifier="Recu"/>
+    <org.eventb.core.event name="J" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Recevoir">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Recevoir"/>
+    </org.eventb.core.event>
 </org.eventb.core.machineFile>
