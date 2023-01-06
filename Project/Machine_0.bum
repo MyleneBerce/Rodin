@@ -12,7 +12,6 @@
     <org.eventb.core.invariant name="*" org.eventb.core.label="inv1" org.eventb.core.predicate="Pret ⊆ PACKETS"/>
     <org.eventb.core.variable name="+" org.eventb.core.comment="PACKETS" org.eventb.core.identifier="Recu"/>
     <org.eventb.core.invariant name="," org.eventb.core.label="inv2" org.eventb.core.predicate="Recu ⊆ PACKETS"/>
-    <org.eventb.core.invariant name="-" org.eventb.core.label="inv3" org.eventb.core.predicate="Recu ∩ (Pret ∪ Transit ∪ Perdu) = ∅"/>
     <org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Envoyer">
         <org.eventb.core.parameter name="'" org.eventb.core.identifier="p"/>
         <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="p ∈ PACKETS "/>
@@ -29,12 +28,9 @@
     </org.eventb.core.event>
     <org.eventb.core.variable name="0" org.eventb.core.comment="PACKETS" org.eventb.core.identifier="Perdu"/>
     <org.eventb.core.variable name="1" org.eventb.core.comment="NODES x NODES" org.eventb.core.identifier="Liaisons"/>
-    <org.eventb.core.invariant name="2" org.eventb.core.label="inv4" org.eventb.core.predicate="Perdu ⊆ PACKETS"/>
-    <org.eventb.core.invariant name="3" org.eventb.core.label="inv5" org.eventb.core.predicate="Pret ∩ (Transit ∪ Recu ∪ Perdu) = ∅"/>
-    <org.eventb.core.invariant name="4" org.eventb.core.label="inv6" org.eventb.core.predicate="Perdu ∩ (Pret ∪ Recu ∪ Transit) = ∅"/>
-    <org.eventb.core.invariant name="5" org.eventb.core.label="inv7" org.eventb.core.predicate="PACKETS = Pret ∪ Perdu ∪ Recu ∪ Transit"/>
-    <org.eventb.core.invariant name="6" org.eventb.core.label="inv8" org.eventb.core.predicate="(Pret ∪ Perdu ∪ Transit = ∅) ⇒ (PACKETS = Recu)"/>
-    <org.eventb.core.invariant name="7" org.eventb.core.label="inv9" org.eventb.core.predicate="Liaisons ∈ NODES ↔ NODES"/>
+    <org.eventb.core.invariant name="2" org.eventb.core.label="inv3" org.eventb.core.predicate="Perdu ⊆ PACKETS"/>
+    <org.eventb.core.invariant name="6" org.eventb.core.label="inv5" org.eventb.core.predicate="(Pret ∪ Perdu ∪ Transit = ∅) ⇒ (PACKETS = Recu)"/>
+    <org.eventb.core.invariant name="7" org.eventb.core.label="inv6" org.eventb.core.predicate="Liaisons ∈ NODES ↔ NODES"/>
     <org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="TopologyChangeRemove">
         <org.eventb.core.parameter name="'" org.eventb.core.identifier="n1"/>
         <org.eventb.core.parameter name="(" org.eventb.core.identifier="n2"/>
@@ -61,6 +57,12 @@
         <org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="p ∈ PACKETS"/>
     </org.eventb.core.event>
     <org.eventb.core.variable name=";" org.eventb.core.comment="PACKETS" org.eventb.core.identifier="Transit"/>
-    <org.eventb.core.invariant name="=" org.eventb.core.label="inv10" org.eventb.core.predicate="Transit ⊆ PACKETS"/>
-    <org.eventb.core.invariant name="&gt;" org.eventb.core.label="inv11" org.eventb.core.predicate="Transit ∩ (Pret ∪ Recu ∪ Perdu) = ∅"/>
+    <org.eventb.core.invariant name="=" org.eventb.core.label="inv7" org.eventb.core.predicate="Transit ⊆ PACKETS"/>
+    <org.eventb.core.invariant name="&gt;" org.eventb.core.label="inv8" org.eventb.core.predicate="Pret ∩ Recu = ∅"/>
+    <org.eventb.core.invariant name="?" org.eventb.core.label="inv9" org.eventb.core.predicate="Pret ∩ Perdu = ∅"/>
+    <org.eventb.core.invariant name="@" org.eventb.core.label="inv10" org.eventb.core.predicate="Pret ∩ Transit = ∅"/>
+    <org.eventb.core.invariant name="A" org.eventb.core.label="inv11" org.eventb.core.predicate="Perdu ∩ Recu = ∅"/>
+    <org.eventb.core.invariant name="B" org.eventb.core.label="inv12" org.eventb.core.predicate="Perdu ∩ Transit = ∅"/>
+    <org.eventb.core.invariant name="C" org.eventb.core.label="inv13" org.eventb.core.predicate="Recu ∩ Transit = ∅"/>
+    <org.eventb.core.invariant name="D" org.eventb.core.label="inv14" org.eventb.core.predicate="PACKETS = Pret ∪ Transit ∪ Recu ∪ Perdu"/>
 </org.eventb.core.machineFile>
