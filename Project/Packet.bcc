@@ -2,10 +2,12 @@
 <org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase">
     <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/Project/Route.bcc|org.eventb.core.scContextFile#Route" org.eventb.core.source="/Project/Packet.buc|org.eventb.core.contextFile#Packet|org.eventb.core.extendsContext#2"/>
     <org.eventb.core.scInternalContext name="Nodes">
+        <org.eventb.core.scAxiom name="'" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(NODES)" org.eventb.core.source="/Project/Nodes.buc|org.eventb.core.contextFile#Nodes|org.eventb.core.axiom#(" org.eventb.core.theorem="false"/>
         <org.eventb.core.scCarrierSet name="NODES" org.eventb.core.source="/Project/Nodes.buc|org.eventb.core.contextFile#Nodes|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(NODES)"/>
     </org.eventb.core.scInternalContext>
     <org.eventb.core.scInternalContext name="Route">
         <org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/Project/Nodes.bcc|org.eventb.core.scContextFile#Nodes" org.eventb.core.source="/Project/Route.buc|org.eventb.core.contextFile#Route|org.eventb.core.extendsContext#*"/>
+        <org.eventb.core.scAxiom name="Nodet" org.eventb.core.label="axm1" org.eventb.core.predicate="finite(ROUTES)" org.eventb.core.source="/Project/Route.buc|org.eventb.core.contextFile#Route|org.eventb.core.axiom#+" org.eventb.core.theorem="false"/>
         <org.eventb.core.scCarrierSet name="ROUTES" org.eventb.core.source="/Project/Route.buc|org.eventb.core.contextFile#Route|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(ROUTES)"/>
     </org.eventb.core.scInternalContext>
     <org.eventb.core.scCarrierSet name="PACKETS" org.eventb.core.source="/Project/Packet.buc|org.eventb.core.contextFile#Packet|org.eventb.core.carrierSet#0" org.eventb.core.type="ℙ(PACKETS)"/>

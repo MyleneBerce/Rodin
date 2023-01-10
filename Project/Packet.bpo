@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="24">
-    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="24">
+<org.eventb.core.poFile org.eventb.core.poStamp="25">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="25">
         <org.eventb.core.poIdentifier name="NODES" org.eventb.core.type="ℙ(NODES)"/>
+        <org.eventb.core.poPredicate name="NODET" org.eventb.core.predicate="finite(NODES)" org.eventb.core.source="/Project/Nodes.buc|org.eventb.core.contextFile#Nodes|org.eventb.core.axiom#("/>
         <org.eventb.core.poIdentifier name="ROUTES" org.eventb.core.type="ℙ(ROUTES)"/>
+        <org.eventb.core.poPredicate name="ROUTET" org.eventb.core.predicate="finite(ROUTES)" org.eventb.core.source="/Project/Route.buc|org.eventb.core.contextFile#Route|org.eventb.core.axiom#+"/>
         <org.eventb.core.poIdentifier name="PACKETS" org.eventb.core.type="ℙ(PACKETS)"/>
     </org.eventb.core.poPredicateSet>
-    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Project/Packet.bpo|org.eventb.core.poFile#Packet|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="24"/>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Project/Packet.bpo|org.eventb.core.poFile#Packet|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="25"/>
 </org.eventb.core.poFile>
